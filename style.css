@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300&family=Rubik:wght@300&display=swap');
+body{
+    background-color: #EEF9F8;
+    margin: 0;
+    padding: 0;
+    font-family: 'Oxygen';
+}
+
+#campaign{
+    width: 90%;
+    margin: 15px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+#campaign .camp-cont{
+    background-color: #8DBAB8;
+    border-radius: 12px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#campaign .camp-cont h1{
+    text-align: center;
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+
+#campaign .camp-cont p{
+    text-align: justify;
+    font-style: normal;
+    font-size: 15px;
+}
+
+#campaign .camp-text{
+    display: grid;
+    grid-template-columns: 75% auto;
+    margin: 0px 30px;
+}
+
+#campaign img{
+    width: 70%;
+    margin: auto;
+}
+
+#campaign .btn{
+    background: #2B7A78;
+	display: block;
+	width: 30%;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 70px;
+	cursor: pointer;
+    margin: auto;
+}
+
+#campaign .btn a{
+    color: #ffffff;
+    text-decoration: none;
+}
