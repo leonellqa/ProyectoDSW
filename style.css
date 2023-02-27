@@ -60,9 +60,41 @@ body{
 	border-radius: 70px;
 	cursor: pointer;
     margin: auto;
+    font-family: 'Oxygen';
+    transition: all 0.5s;
+    position: relative;
+	overflow: hidden;
+   
+}
+
+#campaign .btn a:hover{
+    color: #D6EAE8;
+    transition: all 0.5s;
 }
 
 #campaign .btn a{
     color: #ffffff;
     text-decoration: none;
+    position: relative;
+	z-index: 2;
+}
+
+#campaign .fa-solid{
+    padding: 0 5px;
+}
+
+#campaign .btn::after {
+	content: "";
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: calc(-100% - 80px);
+	border-bottom: 80px solid #215051;
+	border-right: 80px solid transparent;
+	transition: .4s ease-in-out all;
+}
+
+#campaign .btn:hover::after {
+	left: 0;
 }
