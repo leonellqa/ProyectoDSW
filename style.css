@@ -66,3 +66,12 @@ body{
     color: #ffffff;
     text-decoration: none;
 }
+
+#formulario-registro{
+    background: red;
+    border-radius: 12px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
