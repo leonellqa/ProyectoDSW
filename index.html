@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div>
-                <button class="btn"><a href="index.html">¡Quiero participar!</a></button>
+                <button type="button" class="btn" data-tipo="opcion-1" onclick="scroollToForm()">¡Quiero participar!</button>
             </div>
         </div>
 
@@ -45,8 +45,7 @@
                 </div>
             </div>
 
-            <button class="btn"><a href="index.html">¡Quiero participar!</a></button>
-        </div>
+            <button type="button" class="btn" data-tipo="opcion-2" onclick="scroollToForm()">¡Quiero participar!</button>
 
         <div class="camp-cont">
             <h1>Campaña Vida Verde</h1>
@@ -60,8 +59,7 @@
                 <img class="imagen" src="Imagenes/arboles.png" alt="Logo de arboles">
             </div>
             <div>
-                <button class="btn"><a href="index.html">¡Quiero participar!</a></button>
-            </div>
+                <button type="button" class="btn" data-tipo="opcion-3" onclick="scroollToForm()">¡Quiero participar!</button>
 
         </div>
 
@@ -80,11 +78,92 @@
                 </div>
             </div>
             <div>
-                <button class="btn"><a href="index.html">¡Quiero participar!</a></button>
+                <<button type="button" class="btn" data-tipo="opcion-4" onclick="scroollToForm()">¡Quiero participar!</button>
             </div>
 
         </div>
     </section>
+
+    <div id="formulario-registro">
+    
+        <div>
+          <label for="tipo-opcion">Campaña seleccionada:</label>
+          <select id="tipo-opcion" name="tipo-opcion">
+            <option value="">Seleccione una opción</option>
+            <option value="opcion-1">Campaña Reciclando Juntos</option>
+            <option value="opcion-2">Campaña Una Playa Limpia</option>
+            <option value="opcion-3">Campaña Vida Verde</option>
+            <option value="opcion-4">Campaña Escolares Felices</option>
+          </select>
+        </div>
+    
+        <!-- Bloques de contenido adicional para cada opción -->
+        <div class="opcion-info" id="opcion-1-info">
+          <p>Fechas a elegir: Date</p>
+        </div>
+        <div class="opcion-info" id="opcion-2-info">
+          <p>Fechas a elegir: Date 2</p>
+        </div>
+        <div class="opcion-info" id="opcion-3-info">
+          <p>Fechas a elegir: Date 3</p>
+        </div>
+    
+        <div class="opcion-info" id="opcion-4-info">
+            <p>Fechas a elegir: Date 4</p>
+        </div>
+    
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </div>
+
+    
+<script>
+    // Obtener todos los botones de participación
+    var btnsParticipar = document.querySelectorAll('.btn');
+    
+    // Obtener el menú desplegable de tipo de opción
+    var selectTipoOpcion = document.getElementById('tipo-opcion');
+    
+    // Obtener todos los bloques de contenido adicional
+    var opcionesInfo = document.querySelectorAll('.opcion-info');
+    
+    // Agregar un controlador de eventos click a cada botón de participación
+    btnsParticipar.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        // Obtener el valor del atributo data-tipo del botón de participación clickeado
+        var tipoOpcion = this.getAttribute('data-tipo');
+        
+        // Establecer el valor del menú desplegable de tipo de opción al valor correspondiente
+        selectTipoOpcion.value = tipoOpcion;
+        
+        // Mostrar el bloque de contenido adicional correspondiente
+        opcionesInfo.forEach(function(opcionInfo) {
+          opcionInfo.style.display = 'none';
+        });
+        document.getElementById(tipoOpcion + '-info').style.display = 'block';
+      });
+    });
+    
+    // Agregar un controlador de eventos change al menú desplegable de tipo de opción
+    selectTipoOpcion.addEventListener('change', function() {
+      // Ocultar todos los bloques de contenido adicional
+      opcionesInfo.forEach(function(opcionInfo) {
+        opcionInfo.style.display = 'none';
+      });
+      
+      // Mostrar el bloque de contenido adicional correspondiente al valor seleccionado en el menú desplegable
+      var opcionSeleccionada = this.value;
+      if (opcionSeleccionada) {
+        document.getElementById(opcionSeleccionada + '-info').style.display = 'block';
+      }
+    });
+    
+    function scrollToForm() {
+          var formElement = document.getElementById("formulario-registro");
+          formElement.scrollIntoView();
+        }
+    </script>
 
 </body>
 
