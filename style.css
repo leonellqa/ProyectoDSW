@@ -67,12 +67,12 @@ body{
    
 }
 
-#campaign .btn a:hover{
+#campaign .btn span:hover{
     color: #D6EAE8;
     transition: all 0.5s;
 }
 
-#campaign .btn a{
+#campaign .btn span{
     color: #ffffff;
     text-decoration: none;
     position: relative;
@@ -97,4 +97,13 @@ body{
 
 #campaign .btn:hover::after {
 	left: 0;
+}
+
+#formulario-registro{
+    background: red;
+    border-radius: 12px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
